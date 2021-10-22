@@ -5,6 +5,7 @@
 # we're not using any plugins at time of writing.
 # plugins are updated separately to opensearch and must use compatible versions.
 # plugins may depend on other plugins.
+# plugins increase opensearch init time.
 
 set -e
 
@@ -20,7 +21,8 @@ plugin_list=(
     opensearch-job-scheduler
     opensearch-knn
     opensearch-notebooks
-    opensearch-performance-analyzer
+    # can't be removed normally.
+    #opensearch-performance-analyzer
     opensearch-security
     opensearch-sql
 )
