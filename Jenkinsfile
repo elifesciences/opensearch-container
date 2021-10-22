@@ -13,7 +13,7 @@ elifePipeline {
         }
 
         stage 'Sanity tests', {
-            def container = sh(script: "docker run -d elifesciences/opensearch:${tag}", returnStdout: true).trim()
+            def container = sh(script: "docker run -d elifesciences/opensearch:${tag} -e \"discovery.type=single-node\"", returnStdout: true).trim()
             try {
                 sh "sleep 10 && docker exec ${container} curl --silent localhost:9200"
             } finally {
