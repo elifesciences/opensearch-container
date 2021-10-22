@@ -13,9 +13,9 @@ elifePipeline {
         }
 
         stage 'Sanity tests', {
-            def container = sh(script: "sleep 10 && docker run -d elifesciences/opensearch:${tag}", returnStdout: true).trim()
+            def container = sh(script: "docker run -d elifesciences/opensearch:${tag}", returnStdout: true).trim()
             try {
-                sh "docker exec ${container} curl --silent localhost:9200"
+                sh "sleep 10 && docker exec ${container} curl --silent localhost:9200"
             } finally {
                 sh "docker stop ${container}"
                 sh "docker rm ${container}"
