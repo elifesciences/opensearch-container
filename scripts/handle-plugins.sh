@@ -21,9 +21,8 @@ plugin_list=(
     opensearch-job-scheduler
     opensearch-knn
     #opensearch-notebooks # disappeared between 1.1.0 and 1.2.1
-    # can't be removed normally.
-    # lsh@2021-12: builds fine without it under 1.2.1 ...
-    #opensearch-performance-analyzer
+    # also requires modifying the opensearch-docker-entrypoint.sh script
+    opensearch-performance-analyzer
     opensearch-security
     opensearch-sql
 )
