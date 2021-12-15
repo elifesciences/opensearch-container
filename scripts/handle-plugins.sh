@@ -20,8 +20,9 @@ plugin_list=(
     opensearch-reports-scheduler
     opensearch-job-scheduler
     opensearch-knn
-    opensearch-notebooks
+    #opensearch-notebooks # disappeared between 1.1.0 and 1.2.1
     # can't be removed normally.
+    # lsh@2021-12: builds fine without it under 1.2.1 ...
     #opensearch-performance-analyzer
     opensearch-security
     opensearch-sql
